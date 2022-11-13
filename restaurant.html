@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Hotel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/style2.css">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header" id="navigation-menu">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo"> <img src=" images/logo.png" alt=""> </a>
+
+        <ul class="nav-menu">
+          <li> <a href="index.html" class="nav-link">Home</a> </li>
+          <li> <a href="about.html" class="nav-link">Për ne</a> </li>
+          <li> <a href="rooms.html" class="nav-link">Dhomat</a> </li>
+          <li> <a href="restaurant.html" class="nav-link">Restaurant</a> </li>
+          <li> <a href="contact.html" class="nav-link">Contact</a> </li>
+          <li> <a href="login.html" class="nav-link">Login/ SignUp</a> </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const responzive = document.querySelector('.responzive');
+    const navMenu = document.querySelector('.nav-menu');
+
+    responzive.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      responzive.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      responzive.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+  <section class="home" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1>HELLO</h1>
+          <p>Duhet përkushtim, këmbëngulje, kreativitet dhe një ekip profesionistësh me përvojë për t'u ofruar miqve tanë një mikpritje të shkëlqyer shqiptare. Në Maritim Hotel Plaza Tirana, arritëm të bëhemi një hotel i klasit të parë në Tiranë. </p>
+          <button>Rezervo tani!</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src=" images/home1.jpg" class="slide">
+      </div>
+      <div class="image_item">
+        <img src=" images/home1.jpg" alt="" class="slide active" onclick="img('images/home1.jpg')">
+        <img src=" images/home2.jpg" alt="" class="slide" onclick="img(' images/home2.jpg')">
+        <img src=" images/home3.jpg" alt="" class="slide" onclick="img(' images/home3.jpg')">
+        <img src=" images/home4.jpg" alt="" class="slide" onclick="img(' images/home4.jpg')">
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.images');
+      line.style.background = change;
+    }
+  </script>
+
+<section class="restaurant top" id="restaurant">
+    <div class="container flex">
+      <div class="left">
+        <img src=" images/re.jpg" alt="">
+      </div>
+      <div class="right">
+        <div class="text">
+          <h2>Restoranti ynë</h2>
+          <p> Vendet madhështore dhe me përmasa bujare të Qendrës së Konventave Emerald janë bërë një pikë referimi në Kosovë, duke ofruar mjedisin perfekt për takime private, konferenca, darka vjetore, bankete, koktejle, ngjarje të veçanta të korporatave dhe dasma, ndërkohë që sigurojmë që vëmendja ndaj detajeve është e jona. normë. .</p>
+        </div>
+        <div class="accordionWrapper">
+          <div class="accordionItem open">
+            <h2 class="accordionIHeading">Kuzhina Italiane</h2>
+            <div class="accordionItemContent">
+              <p>Çdo të shtunë dhe të diel ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. 
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina Mexikane</h2>
+            <div class="accordionItemContent">
+              <p>Çdo të enjte dhe të premte ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. 
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina tradicionale</h2>
+            <div class="accordionItemContent">
+              <p>Çdo ditë ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina aziatike</h2>
+            <div class="accordionItemContent">
+              <p>Çdo ditë ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+
+
+
+
+ 
+
+
+
+
+     <footer>
+    <div class="container grid top">
+      <div class="box">
+        <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/000000/external-hotel-hotel-services-and-city-elements-flatart-icons-flat-flatarticons-1.png" />
+        <p> Paguaj 5 menyra te pagesës, duke perfshir edhe metoden me Shiba Army </p>
+
+        <p>Mënyrat e pagesës:</p>
+        <div class="payment grid">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
+          <img src="https://img.icons8.com/color-glass/48/000000/paypal.png" />
+          <img src="https://img.icons8.com/fluency/48/000000/amex.png" />
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Lajme të reja</h3>
+
+        <ul>
+          <li>Udhëtimi ynë me varkë në ishullin sekret është vetëm për ju</li>
+          <li>Relakosu në pishinë</li>
+          <li>Shtatori në Hotel Plaza</li>
+          <li>Muzik live dhe koncerte</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Për Klient</h3>
+        <ul>
+          <li>Rreth nesh</li>
+          <li>Kërko ndihmë</li>
+          <li>Llogaria</li>
+          <li>Informatat</li>
+          <li>Term & Kushtet</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Na kontaktoni</h3>
+
+        <ul>
+          <li>Tirana, Bulevardi Shqiperi</li>
+          <li><i class="far fa-envelope"></i>tirana@gmail.com </li>
+          <li><i class="far fa-phone-alt"></i>+355 456 7898 </li>
+          <li><i class="far fa-phone-alt"></i>+355 456 7898 </li>
+          <li><i class="far fa-comments"></i>24/ 7 Shërbimi ndaj klientit </li>
+        </ul>
+      </div>
+    </div>
+  </footer>

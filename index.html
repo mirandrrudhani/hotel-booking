@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Hotel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/style.css">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header" id="navigation-menu">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo"> <img src="images/logo.png" alt=""> </a>
+
+        <ul class="nav-menu">
+          <li> <a href="index.html" class="nav-link">Home</a> </li>
+          <li> <a href="about.html" class="nav-link">Për ne</a> </li>
+          <li> <a href="rooms.html" class="nav-link">Dhomat</a> </li>
+          <li> <a href="restaurant.html" class="nav-link">Restaurant</a> </li>
+          <li> <a href="contact.html" class="nav-link">Contact</a> </li>
+          <li> <a href="login.html" class="nav-link">Login/ SignUp</a> </li>
+        </ul>
+
+        <div class="responzive">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <script>
+    const responzive = document.querySelector('.responzive');
+    const navMenu = document.querySelector('.nav-menu');
+
+    responzive.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      responzive.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      responzive.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+
+  <section class="home" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1>HELLO</h1>
+          <p>Duhet përkushtim, këmbëngulje, kreativitet dhe një ekip profesionistësh me përvojë për t'u ofruar miqve tanë një mikpritje të shkëlqyer shqiptare. Në Maritim Hotel Plaza Tirana, arritëm të bëhemi një hotel i klasit të parë në Tiranë.</p>
+          <button>Rezervo tani!</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src=" images/home1.jpg" class="slide">
+      </div>
+      <div class="image_item">
+        <img src="images/home1.jpg" alt="" class="slide active" onclick="img(' images/home1.jpg')">
+        <img src="images/home2.jpg" alt="" class="slide" onclick="img(' images/home2.jpg')">
+        <img src="images/home3.jpg" alt="" class="slide" onclick="img(' images/home3.jpg')">
+        <img src="images/home4.jpg" alt="" class="slide" onclick="img(' images/home4.jpg')">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.images');
+      line.style.background = change;
+    }
+  </script>
+
+  <section class="book">
+    <div class="container flex">
+      <div class="input grid">
+        <div class="box">
+          <label>Check-in:</label>
+          <input type="date" placeholder="Check-in-Date">
+        </div>
+        <div class="box">
+          <label>Check-out:</label>
+          <input type="date" placeholder="Check-out-Date">
+        </div>
+        <div class="box">
+          <label>Të rrıtur:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+        <div class="box">
+          <label>Fëmıjë:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+      </div>
+      <div class="search">
+        <input type="submit" value="SEARCH">
+      </div>
+    </div>
+  </section>
+
+  <section class="about top" id="about">
+    <div class="container flex">
+      <div class="left">
+        <div class="img">
+          <img src=" images/a1.jpg" alt="" class="image1">
+          <img src=" images/a2.jpg" alt="" class="image2">
+        </div>
+      </div>
+      <div class="right">
+        <div class="heading">
+          <h5>RRITJA E KONFORTIT NË NIVELIN MË LARTË </h5>
+          <h2>Mirësevini në HOTEL PLAZA</h2>
+          <p>I vendosur ideal në qendër të Tiranës, i vendosur brenda zonës tregtare dhe të biznesit, hoteli është vetëm 3 minuta nga Shtëpia e Parlamentit, Galeria Kombëtare e Arteve, Teatri i Operas dhe Baletit dhe Teatri i njohur i Ansamblit, Ky hotel i sapondërtuar, Maritim Hotel Plaza Tirana. , është zgjedhja ideale për udhëtarët e biznesit dhe të kohës së lirë, duke ofruar shërbime dhe lehtësira unike në një mjedis me 5 yje.</p>
+          <p>Ndërtesa mbresëlënëse prej 24 katesh, krenohet me 190 dhoma dhe suita të akomoduara me hapësirë, që ushtrojnë standarde luksoze për të miratuar kënaqësinë dhe një frymëzim elegance dhe sharmi në një dizajn unik modern. Palestra e fitnesit 24 orësh dhe “Oblivion Wellness Spa”, është një oaz i dizajnuar bukur. Të dy lehtësitë u ofrohen mysafirëve tanë për palestër të plotë, relaksim dhe përtëritje.</p>
+          <button class="btn1">Lexo më shumë!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrapper top">
+    <div class="container">
+      <div class="text">  
+        <h2>Shërbimet tona</h2>
+        <p>Duke mbajtur nivelin tuaj të rehatisë në krye të prioriteteve tona </p>
+
+        <div class="content">
+          <div class="box flex">
+            <i class="fas fa-swimming-pool"></i>
+            <span>Pishinë olimpike</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-dumbbell"></i>
+            <span>Gym & yoga</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-spa"></i>
+            <span>Spa & masazh</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-ship"></i>
+            <span>Turne me vark</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-swimmer"></i>
+            <span>Mësime surfi</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-microphone"></i>
+            <span>Dhoma e konferencës</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-water"></i>
+            <span>VIP bar</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-umbrella-beach"></i>
+            <span>SPA Privat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="room top" id="room">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>RRITJA E KONFORTIT NË NIVELIN MË LARTË </h5>
+          <h2>Rooms $ Suites</h2>
+        </div>
+        <div class="button">
+          <button class="btn1">SHIKO TE GJITHA</button>
+        </div>
+      </div>
+
+      <div class="content grid">
+        <div class="box">
+          <div class="img">
+            <img src=" images/r1.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Dhoma standarde</h3>
+            <p> <span>$</span>129 <span>/nata</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="images/r2.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Dhoma VIP</h3>
+            <p> <span>$</span>149 <span>/nata</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src=" images/r3.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Dhoma presidenciale</h3>
+            <p> <span>$</span>199 <span>/nata</span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper wrapper2 top">
+    <div class="container">
+      <div class="text">
+        <div class="heading">
+          <h5>NË ZEMËR TË KOMUNIKIMIT</h5>
+          <h2>Klientët e kënaqur</h2>
+        </div>
+
+        <div class="para">
+          <p>Good location, nice room, very kind staff, breakfast was good, has a lot of potential as it develops under new management. </p>
+
+          <div class="box flex">
+            <div class="img">
+              <img src=" images/c.jpg" alt="">
+            </div>
+            <div class="name">
+              <h5>Dora Kurti</h5>
+              <h5>Prishtinë</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="restaurant top" id="restaurant">
+    <div class="container flex">
+      <div class="left">
+        <img src=" images/re.jpg" alt="">
+      </div>
+      <div class="right">
+        <div class="text">
+          <h2>Restauranit ynë</h2>
+          <p> Ata që duan të zeza janë përjashtim, nuk shohin, fajin e kanë ata që braktisin përgjegjësitë e tyre, kjo është vështirësia që ua zbut mendjen. </p>
+        </div>
+        <div class="accordionWrapper">
+          <div class="accordionItem open">
+            <h2 class="accordionIHeading">Kuzhina Italiane</h2>
+            <div class="accordionItemContent">
+              <p>Çdo të shtunë dhe të diell ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina Mexicane</h2>
+            <div class="accordionItemContent">
+              <p>Çdo të enjte dhe të premte ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. 
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina Tradicionale</h2>
+            <div class="accordionItemContent">
+              <p>Çdo ditë ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. 
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Kuzhina Aziatike</h2>
+            <div class="accordionItemContent">
+              <p>Çdo të enjte dhe të premte ofrohet një Barbecue përveç ushqimit të shijshëm dhe të shëndetshëm të shërbyer gjatë muajve të verës.2 baret ofrojnë një shumëllojshmëri koktejesh, pijesh alkoolike dhe joalkoolike. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionIHeading');
+
+    for (i = 0; i < accHD.length; i++) {
+      accHD[i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem() {
+      var itemClass = this.parentNode.className;
+      for (var i = 0; i < accItem.length; i++) {
+        accItem[i].className = 'accordionItem close';
+      }
+      if (itemClass == 'accordionItem close') {
+        this.parentNode.className = 'accordionItem open';
+      }
+    }
+  </script>
+
+
+
+  <section class="gallary mtop " id="gallary">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>MIRË SE VINI NË FOTOGALERINË TONË </h5>
+          <h2>Photo Gallery of Our Hotel</h2>
+        </div>
+        <div class="button">
+          <button class="btn1">VIEW GALLERY</button>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src=" images/g1.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g2.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g3.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g4.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g5.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g6.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g7.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src=" images/g8.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+
+
+  <section class="map top">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14131.036667732067!2d85.32395955!3d27.69383745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1637755481449!5m2!1sen!2snp" width="600" height="450" style="border:0;"
+      allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+
+  <footer>
+    <div class="container grid top">
+      <div class="box">
+        <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/000000/external-hotel-hotel-services-and-city-elements-flatart-icons-flat-flatarticons-1.png" />
+        <p> Paguaj 5 menyra te pagesës, duke perfshir edhe metoden me Shiba Army </p>
+
+        <p>Mënyrat e pagesës:</p>
+        <div class="payment grid">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
+          <img src="https://img.icons8.com/color-glass/48/000000/paypal.png" />
+          <img src="https://img.icons8.com/fluency/48/000000/amex.png" />
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Lajme të reja</h3>
+
+        <ul>
+          <li>Udhëtimi ynë me varkë në ishullin sekret është vetëm për ju</li>
+          <li>Relakosu në pishinë</li>
+          <li>Shtatori në Hotel Plaza</li>
+          <li>Muzik live dhe koncerte</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Për Klient</h3>
+        <ul>
+          <li>Rreth nesh</li>
+          <li>Kërko ndihmë</li>
+          <li><a href="login.html">Llogaria</a></li>
+          <li>Informatat</li>
+          <li>Term & Kushtet</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Na kontaktoni</h3>
+
+        <ul>
+          <li>Tirana, Bulevardi Shqiperi</li>
+          <li><i class="far fa-envelope"></i>tirana@gmail.com </li>
+          <li><i class="far fa-phone-alt"></i>+355 456 7898 </li>
+          <li><i class="far fa-phone-alt"></i>+355 456 7898 </li>
+          <li><i class="far fa-comments"></i>24/ 7 Shërbimi ndaj klientit </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
